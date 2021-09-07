@@ -23,6 +23,7 @@ public class Menu {
             System.out.println("11) Equal or Different Phrases");
             System.out.println("12) What time is it?");
             System.out.println("13) Go to 1000 from my number");
+            System.out.println("14) Another Menu");
             System.out.println("0) Exit");
             InputText opcion = new InputText(" your option");
             switch (opcion.getText()){
@@ -86,12 +87,15 @@ public class Menu {
                     InputText numberGo1000 = new InputText("number");
                     MathematicFunctions.goTo1000(numberGo1000.getDouble());
                     break;
+                case "14":
+                    MathematicFunctions.NewMenu();
+                    break;
                 case "0":
                     System.out.println("Have a good day");
                     running = false;
                     break;
                 default:
-                    System.out.println("Think about it");
+                    System.out.println("INCORRECT OPTION");
                     break;
             }
 

@@ -134,4 +134,51 @@ public class MathematicFunctions {
         }
     }
 
+    public static void NewMenu(){
+        boolean running = true;
+        while (running){
+            System.out.println("GESTION CINEMATOGRAFICA");
+            System.out.println("1-NUEVO ACTOR");
+            System.out.println("2-BUSCAR ACTOR");
+            System.out.println("3-ELIMINAR ACTOR");
+            System.out.println("4-MODIFICAR ACTOR");
+            System.out.println("5-VER TODOS LOS ACTORES");
+            System.out.println("6- VER PELICULAS DE LOS ACTORES");
+            System.out.println("7-VER CATEGORIA DE LAS PELICULAS DE LOS ACTORES");
+            System.out.println("8-SALIR");
+            InputText opcion = new InputText("AnotherOpcion");
+
+            switch (opcion.getText()){
+                case "1":
+                    System.out.println("CREANDO ACTOR...");
+                    break;
+                case "2":
+                    System.out.println("BUSCANDO ACTOR...");
+                    break;
+                case "3":
+                    System.out.println("ELIMINANDO ACTOR...");
+                    break;
+                case "4":
+                    System.out.println("MODIFICANDO ACTOR...");
+                    break;
+                case "5":
+                    System.out.println("LISTA DE ACTORES...");
+                    break;
+                case "6":
+                    System.out.println("LISTA DE PELICULAS DE LOS ACTORES...");
+                    break;
+                case "7":
+                    System.out.println("LISTA DE CATEGORIA DE LAS PELICULAS DE LOS ACTORES...");
+                    break;
+                case "8":
+                    System.out.println("BYE BYE");
+                    running = false;
+                    break;
+                default:
+                    System.out.println("INCORRECT OPTION");
+                    break;
+            }
+        }
+    }
+
 }
