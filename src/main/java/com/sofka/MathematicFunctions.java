@@ -24,4 +24,13 @@ public class MathematicFunctions {
         System.out.println("The final price of " + price + " with 21% of iva is " + String.format("%.2f",(price + (price*(IVA/100)))));
     }
 
+    public static void EvenAndOdd(){
+        double i = 1;
+        while (i<=100){
+            if (i%2 == 0){System.out.println("Even: " + i);}
+            else {System.out.println("Odd: " + i);}
+            i++;
+        }
+    }
+
 }

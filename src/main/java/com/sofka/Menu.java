@@ -10,6 +10,7 @@ public class Menu {
             System.out.println("1) Is this number greater,less, or equal?.");
             System.out.println("2) Area of a circle.");
             System.out.println("3) 21% of Iva, life is wonderful");
+            System.out.println("4) Even and Odd with while");
             System.out.println("0) Exit");
             InputText opcion = new InputText(" your option");
             switch (opcion.getText()){
@@ -26,7 +27,9 @@ public class Menu {
                     InputText price = new InputText("price");
                     MathematicFunctions.Iva21(price.getDouble());
                     break;
-
+                case "4":
+                    MathematicFunctions.EvenAndOdd();
+                    break;
                 case "0":
                     System.out.println("Have a good day");
                     running = false;
