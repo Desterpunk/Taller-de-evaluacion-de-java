@@ -1,6 +1,8 @@
 package com.sofka;
 
 import java.io.*;
+import java.time.*;
+import java.time.format.*;
 
 public class Menu {
     public static void main(String[] args) {
@@ -19,6 +21,7 @@ public class Menu {
             System.out.println("9) String without spaces");
             System.out.println("10) length of a string, and count of vowels");
             System.out.println("11) Equal or Different Phrases");
+            System.out.println("12) What time is it?");
             System.out.println("0) Exit");
             InputText opcion = new InputText(" your option");
             switch (opcion.getText()){
@@ -73,6 +76,10 @@ public class Menu {
                     InputText phareToCompare2 = new InputText("secondPhraseToCompare");
                     MathematicFunctions.comparePhrases(phareToCompare.getText(), phareToCompare2.getText());
 
+                    break;
+                case "12":
+                    DateTimeFormatter dtf = DateTimeFormatter.ofPattern("AAAA/MM/DD HH:MM:SS");
+                    System.out.println("yyyy/MM/dd HH:mm:ss-> "+dtf.format(LocalDateTime.now()));
                     break;
                 case "0":
                     System.out.println("Have a good day");
