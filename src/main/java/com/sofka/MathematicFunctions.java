@@ -1,5 +1,7 @@
 package com.sofka;
 
+import java.util.logging.ConsoleHandler;
+
 public class MathematicFunctions {
     public static void IsBigger(double num1, double num2){
         if(num1 > num2){
@@ -68,6 +70,29 @@ public class MathematicFunctions {
                 break;
         }
 
+    }
+
+    public static void lengthAndCountPrhase(String phrase){
+        System.out.println("The length is: " + phrase.length());
+        double countA=0,countE=0,countI=0,countO=0,countU=0;
+        for (int i = 0; i < phrase.length(); i++) {
+            if (phrase.toLowerCase().charAt(i) == 'a') {
+                countA++;
+            } else if (phrase.toLowerCase().charAt(i) == 'e'){
+                countE++;
+            } else if (phrase.toLowerCase().charAt(i) == 'i'){
+                countI++;
+            } else if (phrase.toLowerCase().charAt(i) == 'o'){
+                countO++;
+            } else if (phrase.toLowerCase().charAt(i) == 'u'){
+                countU++;
+            }
+        }
+        System.out.println("Amount of a: " + countA + "\n" +
+                            "Amount of e: " + countE + "\n" +
+                            "Amount of i: " + countI + "\n" +
+                            "Amount of o: " + countO + "\n" +
+                            "Amount of u: " + countU + "\n");
     }
 
 }

@@ -14,9 +14,11 @@ public class Menu {
             System.out.println("5) Even and Odd with For");
             System.out.println("6) Only positivism!, also with numbers");
             System.out.println("7) Time for work?");
-            System.out.println("8) La sonrisa sera la mejor arma contra la tristeza \n" +
-                    "Replaced and concatenated ");
+            System.out.println("8) Replacing: 'La sonrisa sera la mejor arma contra la tristeza'" +
+                    " with e's and concatenating a phrase ");
             System.out.println("9) String without spaces");
+            System.out.println("10) length of a string, and count of vowels");
+            System.out.println("11) Equal or Different Phrases");
             System.out.println("0) Exit");
             InputText opcion = new InputText(" your option");
             switch (opcion.getText()){
@@ -61,6 +63,10 @@ public class Menu {
                     InputText phraseWithSpaces = new InputText(" PhraseWithSpaces");
                     String phraseWithoutSpaces = phraseWithSpaces.getText().replaceAll(" ","");
                     System.out.println(phraseWithoutSpaces);
+                    break;
+                case "10":
+                    InputText phraseToCount = new InputText("phraseToCount");
+                    MathematicFunctions.lengthAndCountPrhase(phraseToCount.getText());
                     break;
                 case "0":
                     System.out.println("Have a good day");
