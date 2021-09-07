@@ -18,4 +18,10 @@ public class MathematicFunctions {
             System.out.println("The area of a circle with " + radius + " mm of radius is " + String.format("%.2f", Math.PI * Math.pow(radius, 2)) + "(mm)^2");
         }
     }
+
+    public static void Iva21(double price) {
+            final double IVA = 21;
+        System.out.println("The final price of " + price + " with 21% of iva is " + String.format("%.2f",(price + (price*(IVA/100)))));
+    }
+
 }

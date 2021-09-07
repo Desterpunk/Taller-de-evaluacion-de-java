@@ -22,6 +22,11 @@ public class Menu {
                     InputText radiusCircle1 = new InputText("radius (mm)");
                     MathematicFunctions.AreaOfCircle(radiusCircle1.getDouble());
                     break;
+                case "3":
+                    InputText price = new InputText("price");
+                    MathematicFunctions.Iva21(price.getDouble());
+                    break;
+
                 case "0":
                     System.out.println("Have a good day");
                     running = false;
