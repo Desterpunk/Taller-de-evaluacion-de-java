@@ -11,6 +11,7 @@ public class Menu {
             System.out.println("2) Area of a circle.");
             System.out.println("3) 21% of Iva, life is wonderful");
             System.out.println("4) Even and Odd with while");
+            System.out.println("5) Even and Odd with For");
             System.out.println("0) Exit");
             InputText opcion = new InputText(" your option");
             switch (opcion.getText()){
@@ -29,6 +30,9 @@ public class Menu {
                     break;
                 case "4":
                     MathematicFunctions.EvenAndOdd();
+                    break;
+                case "5":
+                    MathematicFunctions.EvenAndOddFor();
                     break;
                 case "0":
                     System.out.println("Have a good day");
