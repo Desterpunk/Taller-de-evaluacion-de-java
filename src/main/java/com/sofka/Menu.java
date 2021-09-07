@@ -14,6 +14,8 @@ public class Menu {
             System.out.println("5) Even and Odd with For");
             System.out.println("6) Only positivism!, also with numbers");
             System.out.println("7) Time for work?");
+            System.out.println("8) La sonrisa sera la mejor arma contra la tristeza \n" +
+                    "Replaced and concatenated ");
             System.out.println("0) Exit");
             InputText opcion = new InputText(" your option");
             switch (opcion.getText()){
@@ -47,6 +49,12 @@ public class Menu {
                 case "7":
                     InputText dayOfWeek = new InputText("dayOfWeek");
                     MathematicFunctions.WorkDay(dayOfWeek.getText());
+                    break;
+                case "8":
+                    String phrase = "La sonrisa sera la mejor arma contra la tristeza";
+                    phrase = phrase.replace('a','e');
+                    InputText phrase2 = new InputText(" a phrase");
+                    System.out.println(phrase + " " + phrase2.getText());
                     break;
                 case "0":
                     System.out.println("Have a good day");

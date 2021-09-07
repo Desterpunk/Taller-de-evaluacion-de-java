@@ -61,7 +61,7 @@ public class MathematicFunctions {
                 System.out.println(day + " is a workDay");
                 break;
             case "saturday":
-                System.out.println(day + " is not a workDay");
+                System.out.println(day + " is a workDay");
                 break;
             default:
                 System.out.println("Think about it");
