@@ -13,6 +13,7 @@ public class Menu {
             System.out.println("4) Even and Odd with while");
             System.out.println("5) Even and Odd with For");
             System.out.println("6) Only positivism!, also with numbers");
+            System.out.println("7) Time for work?");
             System.out.println("0) Exit");
             InputText opcion = new InputText(" your option");
             switch (opcion.getText()){
@@ -42,6 +43,10 @@ public class Menu {
                         number = positiveNumber.getDouble();
                     } while (number < 0);
                     System.out.println("Positive number is " + number);
+                    break;
+                case "7":
+                    InputText dayOfWeek = new InputText("dayOfWeek");
+                    MathematicFunctions.WorkDay(dayOfWeek.getText());
                     break;
                 case "0":
                     System.out.println("Have a good day");

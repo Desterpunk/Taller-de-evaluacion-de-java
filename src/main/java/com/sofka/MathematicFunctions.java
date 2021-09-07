@@ -40,4 +40,34 @@ public class MathematicFunctions {
         }
     }
 
+    public static void WorkDay(String day){
+        switch (day.toLowerCase()){
+            case "sunday":
+                System.out.println(day + " is not a workDay");
+                break;
+            case "monday":
+                System.out.println(day + " is a workDay");
+                break;
+            case "tuesday":
+                System.out.println(day + " is a workDay");
+                break;
+            case "wednesday":
+                System.out.println(day + " is a workDay");
+                break;
+            case "thursday":
+                System.out.println(day + " is a workDay");
+                break;
+            case "friday":
+                System.out.println(day + " is a workDay");
+                break;
+            case "saturday":
+                System.out.println(day + " is not a workDay");
+                break;
+            default:
+                System.out.println("Think about it");
+                break;
+        }
+
+    }
+
 }
