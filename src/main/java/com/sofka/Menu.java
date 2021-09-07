@@ -6,7 +6,7 @@ public class Menu {
     public static void main(String[] args) {
         boolean running = true;
         while(running){
-            System.out.println("Welcome!, Select one operation: ");
+            System.out.println("\n\n Welcome!, Select one operation: ");
             System.out.println("1) Is this number greater,less, or equal?.");
             System.out.println("2) Area of a circle.");
             System.out.println("3) 21% of Iva, life is wonderful");
@@ -67,6 +67,12 @@ public class Menu {
                 case "10":
                     InputText phraseToCount = new InputText("phraseToCount");
                     MathematicFunctions.lengthAndCountPrhase(phraseToCount.getText());
+                    break;
+                case "11":
+                    InputText phareToCompare = new InputText("firstPhraseToCompare");
+                    InputText phareToCompare2 = new InputText("secondPhraseToCompare");
+                    MathematicFunctions.comparePhrases(phareToCompare.getText(), phareToCompare2.getText());
+
                     break;
                 case "0":
                     System.out.println("Have a good day");

@@ -95,4 +95,37 @@ public class MathematicFunctions {
                             "Amount of u: " + countU + "\n");
     }
 
+    public static void comparePhrases(String phrase1, String phrase2){
+        int at = indexOfDifference(phrase1, phrase2);
+        if (phrase1 == null) {
+            System.out.println("Differences are: " + phrase2);
+        } else if (phrase2 == null) {
+            System.out.println("Differences are: " + phrase1);
+        } else if (phrase1.equals(phrase2)){
+            System.out.println("There are no Differences");
+        } else {
+            System.out.println("Differences are: " + phrase2.substring(at));
+        }
+
+    }
+
+    public static int indexOfDifference(CharSequence cs1, CharSequence cs2) {
+        if (cs1 == cs2) {
+            return 0;
+        }
+        if (cs1 == null || cs2 == null) {
+            return 0;
+        }
+        int i;
+        for (i = 0; i < cs1.length() && i < cs2.length(); ++i) {
+            if (cs1.charAt(i) != cs2.charAt(i)) {
+                break;
+            }
+        }
+        if (i < cs2.length() || i < cs1.length()) {
+            return i;
+        }
+        return 0;
+    }
+
 }
