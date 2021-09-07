@@ -3,6 +3,7 @@ package com.sofka;
 import java.io.*;
 import java.time.*;
 import java.time.format.*;
+import java.util.ArrayList;
 
 public class Menu {
     public static void main(String[] args) {
@@ -24,6 +25,7 @@ public class Menu {
             System.out.println("12) What time is it?");
             System.out.println("13) Go to 1000 from my number");
             System.out.println("14) Another Menu");
+            System.out.println("15) Class of Person");
             System.out.println("0) Exit");
             InputText opcion = new InputText(" your option");
             switch (opcion.getText()){
@@ -89,6 +91,35 @@ public class Menu {
                     break;
                 case "14":
                     MathematicFunctions.NewMenu();
+                    break;
+                case "15":
+                    InputText nombrePersona = new InputText("nombrePersona");
+                    InputText edadPersona = new InputText("edadPersona");
+                    InputText sexoPersona = new InputText("sexoPersona");
+                    InputText pesoPersona = new InputText("pesoPersona");
+                    InputText alturaPersona = new InputText("alturaPersona");
+                    Persona personas[] = new Persona[3];
+                    personas[0] = new Persona(nombrePersona.getText(),(int) edadPersona.getDouble(), sexoPersona.getText().charAt(0),
+                            pesoPersona.getDouble(),alturaPersona.getDouble());
+                    personas[1] = new Persona(nombrePersona.getText(),(int) edadPersona.getDouble(), sexoPersona.getText().charAt(0));
+                    personas[2] = new Persona();
+                    for (int i = 0; i < personas.length; i++) {
+                        if (personas[i].calcularMC() == 0){
+                            System.out.println("La persona " +(i+1)+ " Esta en su peso ideal");
+                        } else if(personas[i].calcularMC() == 1){
+                            System.out.println("La persona " +(i+1)+ " Tiene sobrepeso");
+                        } else if(personas[i].calcularMC() == -1){
+                            System.out.println("La persona " +(i+1)+ " Esta por debajo de su peso ideal");
+                        }
+
+                        if (personas[i].esMayorDeEdad()) {
+                            System.out.println("La persona " +(i+1)+ " Es mayor de edad");
+                        } else {
+                            System.out.println("La persona " +(i+1)+ " No es mayor de edad");
+                        }
+                        System.out.println(personas[i].toAString());
+                    }
+
                     break;
                 case "0":
                     System.out.println("Have a good day");
