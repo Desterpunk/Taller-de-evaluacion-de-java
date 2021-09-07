@@ -22,6 +22,7 @@ public class Menu {
             System.out.println("10) length of a string, and count of vowels");
             System.out.println("11) Equal or Different Phrases");
             System.out.println("12) What time is it?");
+            System.out.println("13) Go to 1000 from my number");
             System.out.println("0) Exit");
             InputText opcion = new InputText(" your option");
             switch (opcion.getText()){
@@ -80,6 +81,10 @@ public class Menu {
                 case "12":
                     DateTimeFormatter dtf = DateTimeFormatter.ofPattern("AAAA/MM/DD HH:MM:SS");
                     System.out.println("yyyy/MM/dd HH:mm:ss-> "+dtf.format(LocalDateTime.now()));
+                    break;
+                case "13":
+                    InputText numberGo1000 = new InputText("number");
+                    MathematicFunctions.goTo1000(numberGo1000.getDouble());
                     break;
                 case "0":
                     System.out.println("Have a good day");

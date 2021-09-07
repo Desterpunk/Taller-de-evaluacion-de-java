@@ -128,4 +128,10 @@ public class MathematicFunctions {
         return 0;
     }
 
+    public static void goTo1000(double number){
+        for (double i = number; i <= 1000; i=i+2) {
+            System.out.println(i);
+        }
+    }
+
 }
