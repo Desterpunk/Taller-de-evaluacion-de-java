@@ -16,6 +16,7 @@ public class Menu {
             System.out.println("7) Time for work?");
             System.out.println("8) La sonrisa sera la mejor arma contra la tristeza \n" +
                     "Replaced and concatenated ");
+            System.out.println("9) String without spaces");
             System.out.println("0) Exit");
             InputText opcion = new InputText(" your option");
             switch (opcion.getText()){
@@ -56,9 +57,17 @@ public class Menu {
                     InputText phrase2 = new InputText(" a phrase");
                     System.out.println(phrase + " " + phrase2.getText());
                     break;
+                case "9":
+                    InputText phraseWithSpaces = new InputText(" PhraseWithSpaces");
+                    String phraseWithoutSpaces = phraseWithSpaces.getText().replaceAll(" ","");
+                    System.out.println(phraseWithoutSpaces);
+                    break;
                 case "0":
                     System.out.println("Have a good day");
                     running = false;
+                    break;
+                default:
+                    System.out.println("Think about it");
                     break;
             }
 
