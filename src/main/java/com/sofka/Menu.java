@@ -26,7 +26,8 @@ public class Menu {
             System.out.println("13) Go to 1000 from my number");
             System.out.println("14) Another Menu");
             System.out.println("15) Class of Person");
-            System.out.println("16) Class electrodomestic");
+            System.out.println("16) Class of Electrodomestic");
+            System.out.println("17) Class of Series and videogames");
             System.out.println("0) Exit");
             InputText opcion = new InputText(" your option");
             switch (opcion.getText()){
@@ -150,6 +151,53 @@ public class Menu {
                     System.out.println("Precio final: " + totalFactura + " euros en electrodomesticos");
                     System.out.println("Precio final: " + facturaLavadora + " euros en lavadoras");
                     System.out.println("Precio final: " + facturaTelevisor + " euros en televisores");
+
+                    break;
+                case "17":
+                    Serie[] series = new Serie[5];
+                    Videojuego[] videojuegos = new Videojuego[5];
+                    series[0] = new Serie("Vikings",7,false,"Guerra ","Michael Hirstt");
+                    series[1] = new Serie("The office",8,false,"Comedia","Greg Daniels");
+                    series[2] = new Serie("Naruto",9,false,"Aventuras","Kishimoto");
+                    series[3] = new Serie("Dragon Ball",6,false,"Aventuras","Toriyama");
+                    series[4] = new Serie("One piece",8,false,"Aventuras","Oda");
+                    videojuegos[0] = new Videojuego("Assassin's creed odyssey",50,"Ubisoft");
+                    videojuegos[1] = new Videojuego("GTA: San andreas",47,"Rockstar");
+                    videojuegos[2] = new Videojuego("Red dead redemption 2",40,"Rockstar");
+                    videojuegos[3] = new Videojuego("Fallout 76",34,"Bethesda");
+                    videojuegos[4] = new Videojuego("Skyrim",30,"Bethesda");
+                    series[0].entregar();
+                    series[1].entregar();
+                    videojuegos[0].entregar();
+                    videojuegos[1].entregar();
+                    videojuegos[2].entregar();
+                    double contadorEntregadosSeries = 0,contadorEntregadosVideojuegos = 0;
+                    int masTemporadas=0, masHoras=0;
+                    for (int i = 0; i < series.length; i++) {
+                        if (series[i].isEntregado()) {
+                            contadorEntregadosSeries++;
+                            series[i].devolver();
+                        }
+
+                        if (series[masTemporadas].getNumeroDeTemporadas() < series[i].getNumeroDeTemporadas()){
+                            masTemporadas = i;
+                        }
+                    }
+                    for (int i = 0; i < videojuegos.length; i++) {
+                        if (videojuegos[i].isEntregado()) {
+                            contadorEntregadosVideojuegos++;
+                            videojuegos[i].devolver();
+                        }
+                        if (videojuegos[masHoras].getHorasEstimadas() <= videojuegos[i].getHorasEstimadas()){
+                            masHoras = i;
+                        }
+                    }
+                    System.out.println("Se entregaron: " +contadorEntregadosSeries+ " Series");
+                    System.out.println("Se entregaron: " +contadorEntregadosVideojuegos+ " Videojuegos");
+
+                    System.out.println("La serie con mas temporadas es la " + series[masTemporadas].toString());
+                    System.out.println("El videojuego con mas horas estimadas es el " + videojuegos[masHoras].toString());
+
 
                     break;
                 case "0":
