@@ -26,6 +26,7 @@ public class Menu {
             System.out.println("13) Go to 1000 from my number");
             System.out.println("14) Another Menu");
             System.out.println("15) Class of Person");
+            System.out.println("16) Class electrodomestic");
             System.out.println("0) Exit");
             InputText opcion = new InputText(" your option");
             switch (opcion.getText()){
@@ -119,6 +120,36 @@ public class Menu {
                         }
                         System.out.println(personas[i].toAString());
                     }
+
+                    break;
+                case "16":
+                    Electrodomestico[] electrodomesticos = new Electrodomestico[10];
+                    electrodomesticos[0] = new Electrodomestico(200, 60, "blanco", 'd');
+                    electrodomesticos[1] = new Lavadora(200, 60, "blanco", 'd',40);
+                    electrodomesticos[2] = new Televisor(200, 60, "blanco", 'd',50,true);
+                    electrodomesticos[3] = new Electrodomestico(200, 60, "blanco", 'd');
+                    electrodomesticos[4] = new Lavadora(200, 60, "blanco", 'd',40);
+                    electrodomesticos[5] = new Televisor(200, 60, "blanco", 'd',50,true);
+                    electrodomesticos[6] = new Electrodomestico(200, 60, "blanco", 'd');
+                    electrodomesticos[7] = new Lavadora(200, 60, "blanco", 'd',40);
+                    electrodomesticos[8] = new Televisor(200, 60, "blanco", 'd',50,true);
+                    electrodomesticos[9] = new Electrodomestico(200, 60, "blanco", 'd');
+
+                    double totalFactura = 0, facturaLavadora = 0, facturaTelevisor =0,facturaElectrodomestico=0;
+                    for (int i = 0; i < electrodomesticos.length; i++) {
+                        if (electrodomesticos[i] instanceof Lavadora){
+                            facturaLavadora += electrodomesticos[i].getPrecioTotal();
+                        } else if (electrodomesticos[i] instanceof Televisor){
+                            facturaTelevisor += electrodomesticos[i].getPrecioTotal();
+                        } else {
+                            facturaElectrodomestico += electrodomesticos[i].getPrecioTotal();
+                        }
+                    }
+                    totalFactura = facturaElectrodomestico+facturaLavadora+facturaTelevisor;
+
+                    System.out.println("Precio final: " + totalFactura + " euros en electrodomesticos");
+                    System.out.println("Precio final: " + facturaLavadora + " euros en lavadoras");
+                    System.out.println("Precio final: " + facturaTelevisor + " euros en televisores");
 
                     break;
                 case "0":

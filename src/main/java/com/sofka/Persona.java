@@ -13,10 +13,11 @@ public class Persona {
     public Persona(){
         this.nombre = "";
         this.edad = 0;
-        this.sexo = 'H';
+        this.sexo = 'h';
         this.peso = 0;
         this.altura = 0;
         this.DNI = generarDNI();
+        comprobarSexo(this.sexo);
     }
     public Persona(String nombre, int edad, char sexo){
         this.nombre = nombre;
@@ -25,6 +26,7 @@ public class Persona {
         this.peso = 0;
         this.altura = 0;
         this.DNI = generarDNI();
+        comprobarSexo(this.sexo);
     }
     public Persona(String nombre, int edad, char sexo, double peso, double altura){
         this.nombre = nombre;
@@ -33,6 +35,7 @@ public class Persona {
         this.peso = peso;
         this.altura = altura;
         this.DNI = generarDNI();
+        comprobarSexo(this.sexo);
     }
 
     public int calcularMC(){
@@ -51,10 +54,8 @@ public class Persona {
         return this.edad >= 18;
     }
     public void comprobarSexo(char sexo){
-        if (sexo == this.sexo){
-            this.sexo = sexo;
-        } else {
-            this.sexo = 'H';
+        if (Character.toLowerCase(sexo) != 'h' && Character.toLowerCase(sexo) != 'm'){
+            this.sexo = 'h';
         }
     }
 
