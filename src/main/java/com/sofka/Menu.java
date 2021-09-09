@@ -18,7 +18,7 @@ public class Menu {
             System.out.println("6) Only positivism!, also with numbers");
             System.out.println("7) Time for work?");
             System.out.println("8) Replacing: 'La sonrisa sera la mejor arma contra la tristeza'" +
-                    " with e's and concatenating a phrase ");
+                    " a's with e's and concatenating a phrase ");
             System.out.println("9) String without spaces");
             System.out.println("10) length of a string, and count of vowels");
             System.out.println("11) Equal or Different Phrases");
@@ -84,7 +84,7 @@ public class Menu {
 
                     break;
                 case "12":
-                    DateTimeFormatter dtf = DateTimeFormatter.ofPattern("AAAA/MM/DD HH:MM:SS");
+                    DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
                     System.out.println("yyyy/MM/dd HH:mm:ss-> "+dtf.format(LocalDateTime.now()));
                     break;
                 case "13":
@@ -231,7 +231,14 @@ class InputText {
         return text;
     }
     public double getDouble() {
-        return Double.parseDouble(text);
+        for (int i = 0; i < text.length(); i++){
+            if (Character.isDigit(text.charAt(i)) == false && text.charAt(0) != '-'){
+                System.out.println(text.charAt(i) +" Is not a number, default = 0");
+            } else {
+                return Double.parseDouble(text);
+            }
+        }
+        return 0;
     }
 
 }
